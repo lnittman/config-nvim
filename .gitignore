@@ -1,0 +1,39 @@
+# LazyVim specific
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
+
+# Lazy.nvim
+lazy-lock.json
+
+# Neovim
+.netrwhist
+*~
+*.swp
+*.swo
+
+# Sessions
+Session.vim
+
+# Temporary
+.DS_Store
+*.tmp
+
+# Local configuration
+.nvim.lua
+.nvimrc
+
+# Plugin generated files
+plugin/packer_compiled.lua
+
+# LSP
+.cache/
+.clangd/
+
+# DAP
+.dap/
