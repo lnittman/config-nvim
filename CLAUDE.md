@@ -1,19 +1,21 @@
-# AI-Native Neovim IDE with Claude Code Integration
+# AI-Native Neovim IDE (Terminal Agents)
 
-This is a LazyVim-based configuration optimized for AI-assisted development with Claude Code.
+This is a LazyVim-based configuration optimized for AI-assisted development using terminal-based coding agents.
 
 ## Key Features
 
-- **Claude Code Integration**: Seamless integration with Claude Code CLI
+- **Terminal Agents**: First-class terminal buffer workflows for coding agents (e.g., claude)
 - **Keyboard-Driven**: All actions accessible without leaving the keyboard
 - **Fast Fuzzy Finding**: Telescope with FZF for lightning-fast file navigation
 - **Smart Window Management**: Intuitive splits and navigation
 
 ## Essential Keybindings
 
-### Claude Code
-- `<leader>cc` - Toggle Claude Code in terminal split
-- `<leader>cr` - Reload files modified by Claude
+### Terminal Agents
+- `<leader>a` - Terminal manager (picker)
+- `<leader>an` - New terminal
+- `<leader>at` - Next terminal
+- `<leader>aT` - Previous terminal
 
 ### Window Management
 - `<C-h/j/k/l>` - Navigate between windows
@@ -67,10 +69,10 @@ This is a LazyVim-based configuration optimized for AI-assisted development with
 
 ## Workflow Tips
 
-1. **Starting Claude Code Session**:
-   - Open a file you want to work on
-   - Press `<leader>cc` to toggle Claude Code
-   - Claude will have access to your current project
+1. **Starting an Agent Session**:
+   - Open a file in your project
+   - Use `<leader>a` to manage terminals, or run `:terminal` and start your agent CLI (e.g., `claude -r`)
+   - Terminal buffers run inside Neovim and have project access
 
 2. **Efficient File Navigation**:
    - Use `<C-p>` for quick file access
@@ -78,13 +80,13 @@ This is a LazyVim-based configuration optimized for AI-assisted development with
    - Use `<leader>fr` for recently edited files
 
 3. **Window Layouts**:
-   - Keep Claude Code on the right: `<leader>|` then `<leader>cc`
-   - Use `<C-h/l>` to quickly switch between code and Claude
+   - Keep your agent on the right: `<leader>sv` (vertical split), then `:terminal` (or `<leader>a` → new)
+   - Use `<C-h/l>` to quickly switch between code and terminal
    - Use `<leader>wm` to focus on code, `<leader>we` to restore
 
 4. **Quick Edits**:
-   - Let Claude make changes, they auto-reload
-   - Use `<leader>cr` if files don't auto-reload
+   - Let agents make changes; buffers auto-reload
+   - Run `:checktime` if files don't auto-reload
    - Use undo (`u`) if you don't like changes
 
 ## First Launch
@@ -98,7 +100,7 @@ When you first open Neovim:
 ## Requirements
 
 - Neovim >= 0.10.1
-- Claude Code CLI installed and configured
+- Agent CLIs as desired (e.g., `claude`) on PATH
 - ripgrep (rg) for fast searching
 - A Nerd Font for icons (optional but recommended)
 

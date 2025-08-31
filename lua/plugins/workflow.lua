@@ -74,46 +74,9 @@ return {
     end,
   },
 
-  -- Project management
-  {
-    "ahmedkhalf/project.nvim",
-    opts = {
-      manual_mode = false,
-      detection_methods = { "pattern" },
-      patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "go.mod" },
-      exclude_dirs = { "~/.cargo/*", "~/.cache/*" },
-      show_hidden = false,
-      silent_chdir = true,
-      scope_chdir = "global",
-    },
-    event = "VeryLazy",
-    config = function(_, opts)
-      require("project_nvim").setup(opts)
-      require("telescope").load_extension("projects")
-    end,
-    keys = {
-      { "<leader>fp", "<cmd>Telescope projects<cr>", desc = "Find project" },
-    },
-  },
+  -- Project management is configured in lua/plugins/projects.lua
 
-  -- Better tmux navigation
-  {
-    "christoomey/vim-tmux-navigator",
-    cmd = {
-      "TmuxNavigateLeft",
-      "TmuxNavigateDown",
-      "TmuxNavigateUp",
-      "TmuxNavigateRight",
-      "TmuxNavigatePrevious",
-    },
-    keys = {
-      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
-      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
-    },
-  },
+  -- Tmux navigation is configured in lua/plugins/tmux-navigator.lua
 
   -- Highlight occurrences of word under cursor
   {

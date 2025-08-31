@@ -44,6 +44,7 @@ opt.undofile = true -- Persistent undo
 opt.undolevels = 10000 -- Maximum number of changes that can be undone
 opt.updatetime = 200 -- Save swap file and trigger CursorHold
 opt.timeoutlen = 300 -- Time to wait for a mapped sequence to complete
+opt.ttimeoutlen = 0 -- Time to wait for a key code sequence to complete (fixes terminal lag)
 opt.backup = false -- Don't backup files
 opt.writebackup = false -- Don't backup files
 
@@ -73,8 +74,20 @@ opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "glob
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_node_provider = 0
-vim.g.loaded_python_provider = 0
+-- Disable Python 3 provider (use LSPs/tools instead)
+vim.g.loaded_python3_provider = 0
 
 -- Set leader key
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+
+-- Load clipboard configuration
+require("config.clipboard")
+
+-- Load tmux integration
+require("config.tmux")
+
+
+
+-- Load improved splits/tabs configuration
+require("config.splits-tabs-improved")

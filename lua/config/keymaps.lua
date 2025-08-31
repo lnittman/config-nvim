@@ -48,6 +48,8 @@ map("t", "<C-n>", "<C-\\><C-n>", { desc = "Normal mode in terminal" })
 -- Quick escape from terminal
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
+
+
 -- Buffer navigation (muscle memory from other editors)
 map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
